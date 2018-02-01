@@ -12,7 +12,7 @@
  '(linum-format (quote dynamic))
  '(package-selected-packages
    (quote
-    (json-mode rjsx-mode yasnippet-snippets web-mode sublime-themes pyvenv js2-mode highlight-indent-guides go-mode find-file-in-project dash company auto-complete async)))
+    (multiple-cursors json-mode rjsx-mode yasnippet-snippets web-mode sublime-themes pyvenv js2-mode highlight-indent-guides go-mode find-file-in-project dash company auto-complete async)))
  '(show-paren-mode t))
 
 (custom-set-faces
@@ -103,6 +103,14 @@
 ;;    (require 'yasnippet)
 ;;    (yas-global-mode 1)
 ;; ;; yasnippets setup
+
+;; multiple cursors setup
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; end of multiple cursors setup
 
 ;; linum mode config for C, Python, html and web modes
 (defun my-c-mode-hook ()
